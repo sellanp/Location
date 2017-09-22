@@ -69,7 +69,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Plac
         holder.addressTextView.setText(placeAddress);
     }
 
-    public void swapPlaces(PlaceBuffer newPlaces){
+    public void swapPlaces(PlaceBuffer newPlaces) {
         mPlaces = newPlaces;
         if (mPlaces != null) {
             // Force the RecyclerView to refresh
@@ -84,7 +84,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Plac
      */
     @Override
     public int getItemCount() {
-        if(mPlaces==null) return 0;
+        if (mPlaces == null) return 0;
         return mPlaces.getCount();
     }
 

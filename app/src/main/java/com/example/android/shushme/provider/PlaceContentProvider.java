@@ -40,6 +40,8 @@ public class PlaceContentProvider extends ContentProvider {
     // Declare a static variable for the Uri matcher that you construct
     private static final UriMatcher sUriMatcher = buildUriMatcher();
     private static final String TAG = PlaceContentProvider.class.getName();
+    // Member variable for a PlaceDbHelper that's initialized in the onCreate() method
+    private PlaceDbHelper mPlaceDbHelper;
 
     // Define a static buildUriMatcher method that associates URI's with their int match
     public static UriMatcher buildUriMatcher() {
@@ -50,9 +52,6 @@ public class PlaceContentProvider extends ContentProvider {
         uriMatcher.addURI(PlaceContract.AUTHORITY, PlaceContract.PATH_PLACES + "/#", PLACE_WITH_ID);
         return uriMatcher;
     }
-
-    // Member variable for a PlaceDbHelper that's initialized in the onCreate() method
-    private PlaceDbHelper mPlaceDbHelper;
 
     @Override
     public boolean onCreate() {
